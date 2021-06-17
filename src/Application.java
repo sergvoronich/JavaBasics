@@ -33,8 +33,13 @@ public class Application {
     }
 
     public static int rand() {
+        Scanner sc = new Scanner(System.in);
         Random rand = new Random();
-        return rand.nextInt(11) + 10;
+        System.out.println("Введите минимальное значение: ");
+        int a = sc.nextInt();
+        System.out.println("Введите максимальное значение: ");
+        int b = sc.nextInt();
+        return rand.nextInt(b-a+1) + a;
     }
 
     public static void main(String[] args) {
@@ -45,6 +50,6 @@ public class Application {
         System.out.println(sum2(enterFractNumber(), enterFractNumber(), enterFractNumber()));
         String str = enterUsername();
         System.out.println("Имя пользователя: " + str);
-        System.out.println("Случайное число от 10 до 20: " + rand());
+        System.out.println("Случайное число в заданном диапазоне: " + rand());
     }
 }
