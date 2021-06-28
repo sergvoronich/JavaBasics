@@ -39,7 +39,7 @@ public class Application {
     }
 
     public static boolean evenCheck(int a) {
-        boolean res = (a % 2 == 0) ? true : false;
+        boolean res = a % 2 == 0;
         return res;
     }
 
