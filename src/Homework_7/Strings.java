@@ -27,13 +27,7 @@ public class Strings {
         System.out.println(cut);
     }
 
-    public static void main(String[] args) {
-
-        stringOperations("I like Java!!!");
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите строку:");
-        String a = sc.nextLine();
+    public static void commaCount(String a) {
         int start = 0;
         int ind = -1;
         int counter = 0;
@@ -47,8 +41,9 @@ public class Strings {
             counter++;
         }
         System.out.println("Количество запятых в введенной строке = " + counter);
+    }
 
-        String s = "  Вроде бы получилось, если я не ошибаюсь. Хотя нужно еще раз проверить!  ";
+    public static StringBuilder lastCharsText(String s) {
         String s1 = s.trim();
         String[] array = s1.split("[,.;:! ]+");
         StringBuilder result = new StringBuilder();
@@ -57,7 +52,19 @@ public class Strings {
             char end = array[i].charAt(array[i].length() - 1);
             result = result.append(end);
         }
-        System.out.println(result);
+        return result;
+    }
 
+    public static void main(String[] args) {
+
+        stringOperations("I like Java!!!");
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите строку:");
+        String a = sc.nextLine();
+        commaCount(a);
+
+        String s = "  Вроде бы получилось, если я не ошибаюсь. Хотя нужно еще раз проверить!  ";
+        System.out.println(lastCharsText(s));
     }
 }
