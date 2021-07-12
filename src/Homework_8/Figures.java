@@ -1,6 +1,6 @@
 package Homework_8;
 
-public class Figures {
+public abstract class Figures {
     private String name;
 
     public String getName() {
@@ -15,11 +15,7 @@ public class Figures {
         System.out.println("Название фигуры: " + name);
     }
 
-    protected int findPerim() {
-        return 0;
-    }
+    public abstract double findPerim();
 
-    protected int findArea() {
-        return 0;
-    }
+    public abstract double findArea();
 }

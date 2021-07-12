@@ -1,14 +1,14 @@
 package Homework_8;
 
 public class Quadrangle extends Figures {
-    protected int length;
-    protected int width;
+    protected double length;
+    protected double width;
 
-    protected int findPerim() {
+    public double findPerim() {
         return 2 * length + 2 * width;
     }
 
-    protected int findArea() {
+    public double findArea() {
         return length * width;
     }
 

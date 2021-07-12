@@ -1,25 +1,25 @@
 package Homework_8;
 
 public class Triangle extends Figures {
-    protected int side1;
-    protected int side2;
-    protected int side3;
+    protected double side1;
+    protected double side2;
+    protected double side3;
 
-    public Triangle(int side1, int side2, int side3) {
+    public Triangle(double side1, double side2, double side3) {
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
     }
 
-    protected int findPerim() {
+    public double findPerim() {
         return side1 + side2 + side3;
     }
 
-    protected int findArea() {
+    public double findArea() {
         double hp = (double) findPerim() / 2;
         double a = hp * (hp - side1) * (hp - side2) * (hp - side3);
         double area = Math.sqrt(a);
-        return (int) Math.round(area);
+        return area;
     }
 
     protected void displayInfo() {

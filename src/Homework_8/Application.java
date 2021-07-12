@@ -21,7 +21,7 @@ public class Application {
         Circle circle1 = new Circle(25);
         circle1.setName("Круг №1");
         circle1.displayInfo();
-        System.out.println("Диаметр фигуры = " + Math.round(circle1.findDiam()));
+        System.out.println("Диаметр фигуры = " + circle1.findDiam());
         System.out.println();
 
         Triangle triangle1 = new Triangle(5, 7, 9);

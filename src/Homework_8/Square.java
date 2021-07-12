@@ -1,7 +1,7 @@
 package Homework_8;
 
 public class Square extends Quadrangle {
-    public Square(int side) {
+    public Square(double side) {
         length = side;
         width = side;
     }
