@@ -7,8 +7,7 @@ import java.util.Set;
 public class App2 {
 
     public static void printKeys(Map<String, Pet> pets) {
-        Set<String> keys = pets.keySet();
-        System.out.println(keys);
+        System.out.println(pets.keySet());
     }
 
     public static void main(String[] args) {
