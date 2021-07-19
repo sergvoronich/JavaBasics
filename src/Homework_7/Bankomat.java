@@ -6,19 +6,19 @@ public class Bankomat {
     private int bill100;
 
     public int getSum20() {
-        return getBill20()*20;
+        return getBill20() * 20;
     }
 
     public int getSum50() {
-        return getBill50()*50;
+        return getBill50() * 50;
     }
 
     public int getSum100() {
-        return getBill100()*100;
+        return getBill100() * 100;
     }
 
     public int getTotalSum() {
-        return getBill20()*20 + getBill50()*50 + getBill100()*100;
+        return getBill20() * 20 + getBill50() * 50 + getBill100() * 100;
     }
 
     public void printInfo() {
