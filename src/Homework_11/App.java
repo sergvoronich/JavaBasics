@@ -18,22 +18,19 @@ public class App {
             Matcher m1 = p1.matcher(password);
             Matcher m2 = p2.matcher(password);
             if (m.find() || !m1.find() || !m2.find()) {
-                throw new Exception("Пароль должен содержать только буквы латинского алфавита и хотя бы одну цифру");
+                throw new PasswordContentException("Пароль должен содержать только буквы латинского алфавита и хотя бы одну цифру");
             } else if (password.length() > 20 || password.length() < 8) {
-                throw new Exception("Пароль должен содержать от 8 до 20 символов");
+                throw new PasswordLengthException("Пароль должен содержать от 8 до 20 символов", password.length());
+            } else if (authenticationData.containsKey(login)) {
+                System.out.println("Введен неверный пароль");
             } else {
-                for (String key : authenticationData.keySet()) {
-                    if (key.equals(login)) {
-                        System.out.println("Введен неверный пароль");
-                        a = true;
-                    }
-                }
-            }
-            if(!a) {
                 System.out.println("Пользователя с таким именем не существует");
             }
-        } catch (Exception e) {
+        } catch (PasswordContentException e) {
             System.out.println(e.getMessage());
+        } catch (PasswordLengthException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Введен пароль, содержащий " + e.getLength() + " символов.");
         }
     }
 
@@ -44,7 +41,7 @@ public class App {
         System.out.println("Введите пароль:");
         String password = sc.nextLine();
 
-        if (authenticationData.containsKey(login) && authenticationData.containsValue(password)) {
+        if (authenticationData.containsKey(login) && authenticationData.get(login).equals(password)) {
             System.out.println("Аутентификация успешно выполнена!");
             System.out.println("Здравствуйте, " + login + "!");
             return true;
