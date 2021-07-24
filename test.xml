@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<country>
+    <name>Беларусь</name>
+    <country_population>9500000</country_population>
+    <official_languages>
+        <language>
+            <name>Russian</name>
+        </language>
+        <language>
+            <name>Belarussian</name>
+        </language>
+    </official_languages>
+    <area>5000000.9</area>
+</country>
